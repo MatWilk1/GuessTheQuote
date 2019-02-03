@@ -21,26 +21,28 @@ def menu():
     print('2. Zakończ grę')
     print('3. Pokaż najlepsze wyniki')
     print('4. Informacje o grze \n')
-    menu1 = input()
-    if menu1 == '1':
-        os.system("cls")
-        game()
-    elif menu1 == '2':
-        os.system("cls")
-        print('\nDo zobaczenia ' + player + ' :)')
-        time.sleep(2)
-        exit()
-    elif menu1 == '3':
-        os.system("cls")
-        best_scores()
-    elif menu1 == '4':
-        os.system("cls")
-        print('\nEmilkowe Cytaty v1.0')
-        print('\nCreated by Mateusz \'Wilq\' Wilk')
-        input('\nNaciśnij Enter aby wrócić do menu')
-        menu()
-    else:
-        menu()
+    menu1 = ''
+    while menu1 not in ('1', '2', '3', '4'):
+        menu1 = input()
+        if menu1 == '1':
+            os.system("cls")
+            game()
+        elif menu1 == '2':
+            os.system("cls")
+            print('\nDo zobaczenia ' + player + ' :)')
+            time.sleep(2)
+            exit()
+        elif menu1 == '3':
+            os.system("cls")
+            best_scores()
+        elif menu1 == '4':
+            os.system("cls")
+            print('\nEmilkowe Cytaty v1.0')
+            print('\nCreated by Mateusz \'Wilq\' Wilk')
+            input('\nNaciśnij Enter aby wrócić do menu')
+            menu()
+        else:
+            print('Nacisnąłeś zły klawisz\nWybierz pozycję z menu i naciśnij Enter')
 
 
 # Game start. Choose game type. Only '1' or '2' allow to start.
